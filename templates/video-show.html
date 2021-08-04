@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width user-scalable=no"; initial-scale=1.0>
+        <link rel="stylesheet" href="../static/w3.css">
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0; 
+                padding: 0;
+            }
+            .video-container {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        {% for third in videos %}
+        <div class="w3-row-padding">
+            {% for vid in third %}
+            <div class="w3-third">
+                <div class="w3-container">
+                    <div class="w3-row-padding">
+                        <div class="w3-container">
+                            <video class="video-container">
+                                <source src="{{ url_for('static', filename=vid) }}" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                              </video>
+                        </div>
+                    </div>
+                    <div class="w3-row-padding">
+                        <div class="w3-third">
+                            <button class="w3-button">PLAY</button>
+                        </div>
+                        <div class="w3-third">
+                            <button class="w3-button">STOP</button>
+                        </div>
+                        <div class="w3-third">
+                            <button class="w3-button">DOWNLOAD</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </body>
+</html>
