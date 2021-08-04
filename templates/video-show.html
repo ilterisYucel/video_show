@@ -21,12 +21,12 @@
     </head>
     <body>
         {% for third in videos %}
-        <div class="w3-row-padding">
+        <div class="w3-row-padding" style="margin-bottom: 32px; ">
             {% for vid in third %}
             <div class="w3-third">
-                <div class="w3-container">
+                <div class="w3-container" style="padding: 0;  background-color: aqua; border: 2px solid indigo">
                     <div class="w3-row-padding">
-                        <div class="w3-container">
+                        <div class="w3-container" >
                             <video class="video-container">
                                 <source src="{{ url_for('static', filename=vid) }}" type="video/mp4">
                                 Your browser does not support HTML5 video.
@@ -34,14 +34,16 @@
                         </div>
                     </div>
                     <div class="w3-row-padding">
-                        <div class="w3-third">
-                            <button class="w3-button">PLAY</button>
-                        </div>
-                        <div class="w3-third">
-                            <button class="w3-button">STOP</button>
-                        </div>
-                        <div class="w3-third">
-                            <button class="w3-button">DOWNLOAD</button>
+                        <div class="w3-container">
+                            <div class="w3-third w3-indigo w3-text-white">
+                                <button class="w3-button">PLAY</button>
+                            </div>
+                            <div class="w3-third w3-indigo w3-text-white">
+                                <button class="w3-button">STOP</button>
+                            </div>
+                            <div class="w3-third w3-indigo w3-text-white">
+                                <button class="w3-button">DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
                 </div>
